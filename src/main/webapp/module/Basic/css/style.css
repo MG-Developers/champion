@@ -1,0 +1,15 @@
+   i{
+        display: inline !important;
+    }
+    .navbar-static-side{
+        color: #a7b1c2;
+    }
+
+    .btn-outline-success {
+        color: #24537f !important;
+        border-color: #24537f !important;
+    }
+    .btn-outline-success:hover {
+        color: #ffffff !important;
+    }
+    
