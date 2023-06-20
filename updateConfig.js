@@ -1,7 +1,7 @@
 
         
         $(document).ready(()=>{
-          
+
           var sessionString = sessionStorage.getItem('object');
                   var object  = JSON.parse(sessionString);
                   console.log(object);
@@ -10,34 +10,63 @@
                   var jdeUrl = $("#jdeUrl").val(object.url); 
                   $("#jdeUser").val(object.username);
                   var jdePassword = $("#jdePassword").val(object.password); 
-             var urlactive = $("#urlactive").prop('checked' ,object.url_active);
+                  // var urlactive = $("#urlactive").prop('checked' ,object.url_active);
+              let elementValue = object.url_active
+              $("#urlactive").prop('checked',elementValue);
 
-           var jdeType = $("#jdeType").filterMultiSelect({
-            placeholderText: "No Type Selected",
-          });
-          var jdeEnv = $("#jdeEnv").filterMultiSelect({
-            placeholderText: "No Type Selected",
-          });
+              $("#urlactive").change(function () {
+                elementValue = $("#urlactive")[0].checked
+                console.log(elementValue)
+              })
 
-          $("#jdeEnv").val(object.env);
-          $("#jdeType").val(object.type);
 
+      
+                  var jdeType = $("#jdeType").filterMultiSelect()
+                  jdeType.selectOption(object.type)
+
+                  var jdeEnv= $("#jdeEnv").filterMultiSelect()
+                  jdeEnv.selectOption(object.env) 
+
+                  var jdeTypeValue = object.type
+                  var jdeEnvValue = object.env
+
+                  $("#jdeType").click(function (){
+                    let selected = jdeType.getSelectedOptionsAsJson(includeDisabled = true);
+                    let options = JSON.parse(selected)
+                    jdeTypeValue = options.Type[0]
+                  })
+                  $("#jdeEnv").click(function (){
+                    let selected = jdeType.getSelectedOptionsAsJson(includeDisabled = true);
+                    let options = JSON.parse(selected)
+                    jdeEnvValue = options.Type[0]
+                  })
+
+
+                  // $("#jdeEnv").val(object.env);
+                  // $("#jdeType").val(object.type);
+             
+                  // var jdeEnv = $("#jdeEnv").filterMultiSelect({
+                  //   placeholderText: "No Type Selected",
+                  // });
+                  // var jde = $("#jdeType").filterMultiSelect({
+                  //   placeholderText: "No Type Selected",
+                  // });
 
           var arr = []
           $("#form").submit((e)=>{
 
             var items = $(".item")
-              items.map((index,value)=>{
-    
-                arr.push(value.innerText.split("\n")[0]);
-                // console.log(value);
-              })
 
+              // items.map((index,value)=>{
+    
+              //   arr.push(value.innerText.split("\n")[0]);
+              // })
 
               var test = $.test()
-              let checkboxValue;
-              elementValue= $("#urlactive")[0].checked
-              console.log(elementValue);
+             
+              // let checkboxValue;
+              // elementValue= $("#urlactive")[0].checked
+              // console.log(elementValue);
                 e.preventDefault();
                 
                      $.ajax({
@@ -45,13 +74,17 @@
                      url: `${test}/configmaster/updateconfig/${object.id}`,
                      dataSrc:"",
                      data: JSON.stringify({
+                    
                        "url": $("#jdeUrl").val(),
                        username: $("#jdeUser").val(),
                        "password": jdePassword[0].value,
                        "url_active": elementValue,
+                       "env": jdeTypeValue,
+                       "type": jdeEnvValue
+                    
 
-                       "env": array1,
-                       "type": array2,
+                      //  "env": arr[0],
+                      //  "type": arr[1],
         
                      }),
                      headers: {
@@ -80,7 +113,7 @@
                      error: function(xhr){
                        console.log("error");
                        console.log(xhr);
-                                   alert('fail')
+                            alert('fail')
                                   
                      },
                     })
