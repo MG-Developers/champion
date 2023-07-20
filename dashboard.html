@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DashBoard</title>
+    <link href="../../../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../static/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- <link href="../css/chart.css" rel="stylesheet"> -->
+
+
+
+    <link href="../../../static/css/animate.css" rel="stylesheet">
+    <link href="../../../static/css/style.css" rel="stylesheet">
+
+
+    <script src="../../../static/js/bootstrap.js"></script>
+    <script src="../../../static/js/jquery-2.1.1.js"></script>
+
+
+    <style>
+        .my-ibox-title {
+            color: inherit;
+            margin-bottom: 0;
+            min-height: 48px;
+            position: relative;
+            clear: both;
+            -webkit-border-radius: 3px 3px 0 0;
+            -moz-border-radius: 3px 3px 0 0;
+            border-radius: 2px 2px 0 0;
+            padding: 15px 15px 6px 15px;
+        }
+
+        .my-ibox-content {
+            color: inherit;
+            padding: 15px 20px 20px 20px;
+        }
+
+        #myInput {
+            padding: 20px;
+            margin-top: -6px;
+            border: 0;
+            border-radius: 0;
+            background: #f1f1f1;
+        }
+
+        /* 
+        /* .dropdown-menu {
+            position: absolute;
+            position: relative;
+        } */
+
+        .flexCenter {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+    <script>
+        let sessionString = sessionStorage.getItem("userrole")
+
+        let name = JSON.parse(sessionString);
+
+        if(name != null)
+        {
+            if(name.includes("USER") || name.includes("GATE") || name.includes("QUALITY") || name.includes("STORE"))
+            {
+    
+            }
+            else{
+               window.location.href = "../../../Basic/template/404.jsp";
+            }
+        }
+        else{
+            window.location.href = "../../../Basic/template/404.jsp";
+        }
+
+   </script> -->
+    <div id="wrapper">
+        <!--% including header %-->
+        <jsp:include page="../../../Basic/template/header.jsp" />
+
+        <!--% including breadcrumb %-->
+        <jsp:include page="../../../Basic/template/breadcrumb.jsp" />
+
+        <div class="wrapper wrapper-content">
+            <div class="row" id="apiData" style="color: #FFFFFF;">
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="ibox ">
+                        <div class="ibox-title flexCenter">
+                            <div>
+                                <h5>Purchase Order</h5>
+                            </div>
+
+                            <div>
+                                <select id="year"></select>
+                                <select id="month"></select>
+                                <button id="fetchDates">Fetch Dates</button>
+                            </div>
+
+                        </div>
+
+                        <div class="ibox-content">
+                            <div class="text-center">
+                                <canvas id="polarChart" height="140"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ibox ">
+                        <div class="ibox-title">
+                            <h5>Gate Entry View</h5>
+                        </div>
+
+                        <div class="ibox-content">
+                            <div>
+                                <canvas id="doughnutChart" height="140"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--% including footer %-->
+            <jsp:include page="../../../Basic/template/footer.jsp" />
+
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="../../../static/js/popper.min.js"></script>
+    <script src="../../../static/js/bootstrap.js"></script>
+    <script src="../../../static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="../../../static/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- <script src="../../../Configration/js/globalConfig.js"></script> -->
+
+
+    <!-- Custom and plugin javascript -->
+    <script src="../../../../static/js/inspinia.js"></script>
+    <script src="../../../static/js/plugins/pace/pace.min.js"></script>
+
+
+    <!-- jQuery UI -->
+    <script src="../../../static/js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+
+    <!-- DashBoard Js -->
+    <script src="../js/dashBoard.js"></script>
+
+
+    <!-- ChartJS-->
+    <script src="../../../static/js/plugins/chartJs/Chart.min.js"></script>
+    <script src="../../../static/js/demo/chartjs-demo.js"></script>
+
+    <!-- Breacrumb JS -->
+    <script src="../../../custom/js/breadcrumb.js"></script>
+    <script src="../../../cdn/js/sweetalert2.js"></script>
+    <script src="../../../cdn/js/jquery.dataTables.min.js"></script>
+    <script src="../../../cdn/js/dataTables.responsive.min.js"></script>
+
+
+
+
+
+</body>
+
+</html>
