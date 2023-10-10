@@ -108,7 +108,7 @@
                     </div>
 
                     <div class="modal-body">
-                        <table id="Datable" class="display responsive nowrap text-left " style="width: 100%">
+                        <table id="Datable2" class="display responsive nowrap text-left " style="width: 100%">
                             <thead>
                                 <th class="text-left" data-hide="phone">EA Email</th>
                                 <th class="text-left" data-hide="phone">
