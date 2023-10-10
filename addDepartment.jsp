@@ -14,6 +14,18 @@
     <link href="../../../../static/css/animate.css" rel="stylesheet">
     <link href="../../../../static/css/style.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="../../../cdn/css/jquery.dataTables.css">
+
+    <link rel="stylesheet" href="../../../cdn/css/responsive.dataTables.min.css">
+
+
+    <link rel="stylesheet" href="../../../cdn/css/select.dataTables.min.css">
+    <script src="../../../cdn/js/jquery.dataTables.min.js"></script>
+
+    <script src="../../../cdn/js/dataTables.responsive.min.js"></script>
+
+    <script src="../../../cdn/js/dataTables.select.min.js"></script>
+
     <script src="../../../../cdn/js/sweetalert2.js"></script>
 
 
