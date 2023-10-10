@@ -1,80 +1,73 @@
 $(document).ready(() => {
 
+  var emailArr = []
+
   $('#addemail').on('click', function () {
+    let emailVal = $('#eaemail').val();
+    let emailType = "EA_email"
+
+    emailArr.push({
+      'email': emailVal,
+      'emailType': emailType
+    })
+
+    $("#ea_tbody").append(`<tr><td>${emailVal}</td><td>${emailType}</td></tr>`)
+
     $('#myModal5').modal('show');
+    // $('#eaemail').val('');
   });
-
-  $('#emailadd').on('click', function () {
-
-    let emailVal = $('#emailname').val();
-
-    $('#eaemail').val(emailVal);
-
-    $('#myModal5').modal('hide');
-  });
-
 
   $('#addemail2').on('click', function () {
-    $('#myModal6').modal('show');
+    let emailVal = $('#hodemail').val();
+    let emailType = "HOD_email"
+
+    emailArr.push({
+      'email': emailVal,
+      'emailType': emailType
+    })
+
+    $("#ea_tbody").append(`<tr><td>${emailVal}</td><td>${emailType}</td></tr>`)
+
+    $('#myModal5').modal('show');
+    // $('#hodemail').val('');
   });
-
-  $('#emailadd2').on('click', function () {
-
-    let emailVal = $('#emailname2').val();
-
-    $('#hodemail').val(emailVal);
-
-    $('#myModal6').modal('hide');
-  });
-
 
   $('#eaemail').hide();
   $('#addemail').hide();
 
-  // Bind an event handler to the change event of the dropdown
   $('#ea').change(function () {
-
-    // Check the selected value
     var selectedValue = $("#ea").val();
-    // If "No" is selected, hide the input field  with button; otherwise, show it
+
     if (selectedValue === 'N') {
 
       $('#eaemail').hide();
       $("#addemail").hide();
-    } else {
+    }
+
+    else {
       $('#eaemail').show();
       $("#addemail").show();
-
     }
   });
 
-  $('#hodemail').hide();
-
-
   $('#hod').change(function () {
-
-    // Check the selected value
     var selectedValue = $("#hod").val();
-    // If "No" is selected, hide the input field  with button; otherwise, show it
+
     if (selectedValue === 'N') {
 
       $('#hodemail').hide();
       $("#addemail2").hide();
-    } else {
+    }
+
+    else {
       $('#hodemail').show();
       $("#addemail2").show();
-
     }
   });
 
   const token = JSON.parse(localStorage.getItem("token"));
   $("form")[0].reset();
   let test = $.test();
-  let emailArr = []
-  let selectFilter;
-
-
-
 
   //   $("#DropDown").filterMultiSelect({
   //     placeholderText: "Nothing Selected"
@@ -125,40 +118,24 @@ $(document).ready(() => {
 
   $('#form').submit(function (e) {
 
-
-
     e.preventDefault();
-    let values = selectFilter.getSelectedOptionsAsJson(includeDisabled = true);
-
-    JSON.parse(values).emails.map(values => {
-      emailArr.push({ email: values });
-    })
 
     var departmentcode = $("#departmentcode").val()
     var departmentname = $("#departmentname").val()
-    var ea = $('#ea option:selected').val();
-    var hod = $("#hod").val()
     var naming = $('#name').val();
-    // var emailname= $('#emailname').val();
-
-
-
+    var ea = $("#ea").val();
+    var hod = $("#hod").val();
 
     $.ajax({
       url: `${[test[0].url]}/department/add`,
       type: "POST",
       data: JSON.stringify({
-
-        departmentCode: departmentcode,
         departmentName: departmentname,
+        departmentCode: departmentcode,
+        name: naming,
         e_A: ea,
         hod: hod,
-        name: naming,
         emails: emailArr
-
-
-
-
       }),
 
       headers: {
@@ -197,14 +174,7 @@ $(document).ready(() => {
         }
       }
     });
-
-
-
-
   });
-
-
-
 
   $(".cancel").click((e) => {
     e.preventDefault();
