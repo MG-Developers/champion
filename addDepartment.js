@@ -112,6 +112,29 @@ $(document).ready(() => {
     pagingType: "simple_numbers",
   });
 
+    $("#Datable2").DataTable({
+
+    language: {
+
+      'paginate': {
+
+        'previous': '<span class="prev-icon"><i class="fa fa-angle-left"></i></span>',
+
+        'next': '<span class="next-icon"><i class="fa fa-angle-right"></i></span>'
+
+      }
+
+    },
+
+    dom: '<"top">t<"bottom"ip>',
+
+    ordering: true,
+
+    lengthMenu: [5, 10, 20, 25, 50],
+
+    pagingType: "simple_numbers",
+  });
+
   const token = JSON.parse(localStorage.getItem("token"));
   $("form")[0].reset();
   let test = $.test();
