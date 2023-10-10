@@ -2,6 +2,8 @@ $(document).ready(() => {
   var eaEmailArr = []
   var hodEmailArr = []
 
+  $("#eaemail").filterMultiSelect()
+
   $('#addemail').on('click', function () {
     $('#myModal5').modal('show');
   });
@@ -24,10 +26,24 @@ $(document).ready(() => {
 
 
   $('#selectRecords').on('click', function () {
+
+    let EA_Dropdown = `<select id="eaemail" name="eaemail" class="form-control" multiple
+    placeholder="EA Email">`
+
     for (let i = 0; i < eaEmailArr.length; i++) {
-      $('#eaemail').append(`<option value=${eaEmailArr[i]['email']}>${eaEmailArr[i]['email']}</option>`)
+      EA_Dropdown += `<option value=${eaEmailArr[i]['email']}>${eaEmailArr[i]['email']}</option>`
     }
+
+    EA_Dropdown += `</select>`
+
+    document.getElementById('eaEmailDropdown').innerHTML = EA_Dropdown
+
+    var eaEmailDropdown = $("#eaemail").filterMultiSelect()
+
+    eaEmailDropdown.selectAll()
   });
+
+  $("#hodemail").filterMultiSelect()
 
   $('#addemail2').on('click', function () {
     $('#myModal6').modal('show');
@@ -35,6 +51,7 @@ $(document).ready(() => {
   });
 
   $('#button-addon2').on('click', function () {
+
     let emailVal = $('#hodemail2').val();
 
     if (emailVal !== "") {
@@ -50,27 +67,35 @@ $(document).ready(() => {
   });
 
   $('#selectRecords2').on('click', function () {
+
+    let HOD_Dropdown = `<select id="hodemail" name="hodemail" class="form-control" multiple
+    placeholder="HOD Email">`
+
     for (let i = 0; i < hodEmailArr.length; i++) {
-      $('#hodemail').append(`<option value=${hodEmailArr[i]['email']}>${hodEmailArr[i]['email']}</option>`)
+      HOD_Dropdown += `<option value=${hodEmailArr[i]['email']}>${hodEmailArr[i]['email']}</option>`
     }
+
+    HOD_Dropdown += `</select>`
+
+    document.getElementById('hodEmailDropdown').innerHTML = HOD_Dropdown
+
+    var hodEmailDropdown = $("#hodemail").filterMultiSelect()
+
+    hodEmailDropdown.selectAll()
   });
 
 
-  $('#eaemail').hide();
-  $('#addemail').hide();
+  $('#ea_email_container').hide();
 
   $('#ea').change(function () {
     var selectedValue = $("#ea").val();
 
     if (selectedValue === 'N') {
-
-      $('#eaemail').hide();
-      $("#addemail").hide();
+      $('#ea_email_container').hide();
     }
 
     else {
-      $('#eaemail').show();
-      $("#addemail").show();
+      $('#ea_email_container').show();
     }
   });
 
@@ -112,7 +137,7 @@ $(document).ready(() => {
     pagingType: "simple_numbers",
   });
 
-    $("#Datable2").DataTable({
+  $("#Datable2").DataTable({
 
     language: {
 
@@ -180,11 +205,6 @@ $(document).ready(() => {
 
   //     }
   // });
-
-
-
-
-
 
   $('#form').submit(function (e) {
 

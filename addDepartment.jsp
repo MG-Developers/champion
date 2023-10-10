@@ -108,7 +108,7 @@
                     </div>
 
                     <div class="modal-body">
-                        <table id="Datable2" class="display responsive nowrap text-left " style="width: 100%">
+                        <table id="Datable" class="display responsive nowrap text-left " style="width: 100%">
                             <thead>
                                 <th class="text-left" data-hide="phone">EA Email</th>
                                 <th class="text-left" data-hide="phone">
@@ -161,7 +161,7 @@
                     </div>
 
                     <div class="modal-body">
-                        <table id="Datable" class="display responsive nowrap text-left " style="width: 100%">
+                        <table id="Datable2" class="display responsive nowrap text-left " style="width: 100%">
                             <thead>
                                 <th class="text-left" data-hide="phone">HOD Email</th>
                                 <th class="text-left" data-hide="phone">
@@ -211,10 +211,14 @@
                                                 <div class="form-group"><label> Name*</label> <input type="text"
                                                         placeholder="Name" class="form-control" id="name"></div>
 
-                                                <div class="input-group mb-3 mt-4 ">
-                                                    <select class="form-control" id="eaemail">
-                                                        <option selected hidden disabled>Hod Emails</option>
-                                                    </select>
+                                                <div class="input-group mb-3 mt-4" id="ea_email_container">
+                                                    <div id="eaEmailDropdown">
+                                                        <label for="eaemail">EA Emails*</label> <br>
+                                                        <select id="eaemail" name="eaemail" class="form-control"
+                                                            multiple>
+                                                        </select>
+                                                    </div>
+
                                                     <div class="input-group-append">
                                                         <button class="btn btn-primary" type="button" id="addemail"
                                                             data-toggle="modal" data-target="#myModal5">Add
@@ -243,12 +247,12 @@
                                                 </div>
 
                                                 <div class="input-group mb-3 mt-4 ">
-                                                    <!-- <input type="email" class="form-control" placeholder="HOD Email"
-                                                    aria-label="Email" aria-describedby="basic-addon2"
-                                                    id="hodemail"> -->
-                                                    <select class="form-control" id="hodemail">
-                                                        <option selected hidden disabled>Hod Emails</option>
-                                                    </select>
+                                                    <div id="hodEmailDropdown">
+                                                        <label for="hodemail">HOD Emails*</label> <br>
+                                                        <select id="hodemail" name="hodemail" class="form-control"
+                                                            multiple>
+                                                        </select>
+                                                    </div>
                                                     <div class="input-group-append">
                                                         <button class="btn btn-primary" type="button" id="addemail2"
                                                             data-toggle="modal" data-target="#myModal6">Add
