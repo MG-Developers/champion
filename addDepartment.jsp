@@ -200,8 +200,9 @@
                                                         placeholder="Name" class="form-control" id="name"></div>
 
                                                 <div class="input-group mb-3 mt-4 ">
-                                                    <input type="email" class="form-control" placeholder=" EA Email"
-                                                        aria-label="Email" aria-describedby="basic-addon2" id="eaemail">
+                                                    <select class="form-control" id="eaemail">
+                                                        <option selected hidden disabled>Hod Emails</option>
+                                                    </select>
                                                     <div class="input-group-append">
                                                         <button class="btn btn-primary" type="button" id="addemail"
                                                             data-toggle="modal" data-target="#myModal5">Add
@@ -230,9 +231,12 @@
                                                 </div>
 
                                                 <div class="input-group mb-3 mt-4 ">
-                                                    <input type="email" class="form-control" placeholder="HOD Email"
-                                                        aria-label="Email" aria-describedby="basic-addon2"
-                                                        id="hodemail">
+                                                    <!-- <input type="email" class="form-control" placeholder="HOD Email"
+                                                    aria-label="Email" aria-describedby="basic-addon2"
+                                                    id="hodemail"> -->
+                                                    <select class="form-control" id="hodemail">
+                                                        <option selected hidden disabled>Hod Emails</option>
+                                                    </select>
                                                     <div class="input-group-append">
                                                         <button class="btn btn-primary" type="button" id="addemail2"
                                                             data-toggle="modal" data-target="#myModal6">Add

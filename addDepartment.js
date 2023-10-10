@@ -9,25 +9,24 @@ $(document).ready(() => {
   $('#button-addon1').on('click', function () {
 
     let emailVal = $('#eaemail2').val();
-    let emailType = "EA_email"
 
-    eaEmailArr.push({
-      'email': emailVal,
-      'emailType': emailType
-    })
+    if (emailVal !== "") {
+      let emailType = "EA_email"
 
-    $("#ea_tbody").append(`<tr><td>${emailVal}</td><td>${emailType}</td></tr>`)
-    // $('#eaemail').val('');
+      eaEmailArr.push({
+        'email': emailVal,
+        'emailType': emailType
+      })
+
+      $("#ea_tbody").append(`<tr><td>${emailVal}</td><td>${emailType}</td></tr>`)
+    }
   });
 
 
   $('#selectRecords').on('click', function () {
-    var eaEmails = ""
-
     for (let i = 0; i < eaEmailArr.length; i++) {
-      eaEmails = eaEmails + " " + eaEmailArr[i]['email']
+      $('#eaemail').append(`<option value=${eaEmailArr[i]['email']}>${eaEmailArr[i]['email']}</option>`)
     }
-    $('#eaemail').val(eaEmails)
   });
 
   $('#addemail2').on('click', function () {
@@ -37,25 +36,25 @@ $(document).ready(() => {
 
   $('#button-addon2').on('click', function () {
     let emailVal = $('#hodemail2').val();
-    let emailType = "HOD_email"
 
-    hodEmailArr.push({
-      'email': emailVal,
-      'emailType': emailType
-    })
+    if (emailVal !== "") {
+      let emailType = "HOD_email"
 
-    $("#hod_tbody").append(`<tr><td>${emailVal}</td><td>${emailType}</td></tr>`)
-    // $('#hodemail').val('');
+      hodEmailArr.push({
+        'email': emailVal,
+        'emailType': emailType
+      })
+
+      $("#hod_tbody").append(`<tr><td>${emailVal}</td><td>${emailType}</td></tr>`)
+    }
   });
 
   $('#selectRecords2').on('click', function () {
-    var hodEmails = ""
-
     for (let i = 0; i < hodEmailArr.length; i++) {
-      hodEmails = hodEmails + " " + hodEmailArr[i]['email']
+      $('#hodemail').append(`<option value=${hodEmailArr[i]['email']}>${hodEmailArr[i]['email']}</option>`)
     }
-    $('#hodemail').val(hodEmails)
   });
+
 
   $('#eaemail').hide();
   $('#addemail').hide();
