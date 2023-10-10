@@ -1,35 +1,60 @@
 $(document).ready(() => {
-
-  var emailArr = []
+  var eaEmailArr = []
+  var hodEmailArr = []
 
   $('#addemail').on('click', function () {
-    let emailVal = $('#eaemail').val();
+    $('#myModal5').modal('show');
+  });
+
+  $('#button-addon1').on('click', function () {
+
+    let emailVal = $('#eaemail2').val();
     let emailType = "EA_email"
 
-    emailArr.push({
+    eaEmailArr.push({
       'email': emailVal,
       'emailType': emailType
     })
 
     $("#ea_tbody").append(`<tr><td>${emailVal}</td><td>${emailType}</td></tr>`)
-
-    $('#myModal5').modal('show');
     // $('#eaemail').val('');
   });
 
+
+  $('#selectRecords').on('click', function () {
+    var eaEmails = ""
+
+    for (let i = 0; i < eaEmailArr.length; i++) {
+      eaEmails = eaEmails + " " + eaEmailArr[i]['email']
+    }
+    $('#eaemail').val(eaEmails)
+  });
+
   $('#addemail2').on('click', function () {
-    let emailVal = $('#hodemail').val();
+    $('#myModal6').modal('show');
+    // $('#hodemail').val('');
+  });
+
+  $('#button-addon2').on('click', function () {
+    let emailVal = $('#hodemail2').val();
     let emailType = "HOD_email"
 
-    emailArr.push({
+    hodEmailArr.push({
       'email': emailVal,
       'emailType': emailType
     })
 
-    $("#ea_tbody").append(`<tr><td>${emailVal}</td><td>${emailType}</td></tr>`)
-
-    $('#myModal5').modal('show');
+    $("#hod_tbody").append(`<tr><td>${emailVal}</td><td>${emailType}</td></tr>`)
     // $('#hodemail').val('');
+  });
+
+  $('#selectRecords2').on('click', function () {
+    var hodEmails = ""
+
+    for (let i = 0; i < hodEmailArr.length; i++) {
+      hodEmails = hodEmails + " " + hodEmailArr[i]['email']
+    }
+    $('#hodemail').val(hodEmails)
   });
 
   $('#eaemail').hide();
@@ -125,6 +150,7 @@ $(document).ready(() => {
     var naming = $('#name').val();
     var ea = $("#ea").val();
     var hod = $("#hod").val();
+    var emailArr = eaEmailArr.concat(hodEmailArr)
 
     $.ajax({
       url: `${[test[0].url]}/department/add`,

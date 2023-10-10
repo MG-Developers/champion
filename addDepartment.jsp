@@ -78,11 +78,10 @@
                                             <div class="input-group ">
                                                 <input type="text" class="form-control column_filter"
                                                     placeholder="Email" aria-label="Admin Theme"
-                                                    aria-describedby="button-addon2" id="col2_filter">
+                                                    aria-describedby="button-addon2" id="eaemail2">
                                                 <div class="input-group-append" id="searchrecord">
-                                                    <button class="btn btn-primary" type="button" id="button-addon1"><i
-                                                            class="fa fa-search"></i>
-                                                        Search</button>
+                                                    <button class="btn btn-primary" type="button" id="button-addon1">
+                                                        Add Email</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -111,7 +110,61 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                        <button id="select" type="button" data-dismiss="modal" class="btn btn-primary">Select</button>
+                        <button id="selectRecords" type="button" data-dismiss="modal"
+                            class="btn btn-primary">Select</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal inmodal fade" id="myModal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span
+                                aria-hidden="true">&times;</span><span class="sr-only">Close</span></button> <br><br>
+                        <table cellspacing="0" cellpadding="4">
+                            <tbody>
+                                <tr id="filter_col2" data-column="1" class=" ">
+                                    <td class=" col-12 ">
+                                        <div class="d-flex ">
+                                            <div class="input-group ">
+                                                <input type="text" class="form-control column_filter"
+                                                    placeholder="Email" aria-label="Admin Theme"
+                                                    aria-describedby="button-addon2" id="hodemail2">
+                                                <div class="input-group-append" id="searchrecord">
+                                                    <button class="btn btn-primary" type="button" id="button-addon2">
+                                                        Add Email</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td align="center"><input type="checkbox" class="column_filter invisible"
+                                            id="col2_smart" checked="checked">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="modal-body">
+                        <table id="Datable" class="display responsive nowrap text-left " style="width: 100%">
+                            <thead>
+                                <th class="text-left" data-hide="phone">HOD Email</th>
+                                <th class="text-left" data-hide="phone">
+                                    Type</th>
+                            </thead>
+                            <tbody id="hod_tbody">
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                        <button id="selectRecords2" type="button" data-dismiss="modal"
+                            class="btn btn-primary">Select</button>
                     </div>
                 </div>
             </div>
@@ -182,7 +235,7 @@
                                                         id="hodemail">
                                                     <div class="input-group-append">
                                                         <button class="btn btn-primary" type="button" id="addemail2"
-                                                            data-toggle="modal" data-target="#myModal5">Add
+                                                            data-toggle="modal" data-target="#myModal6">Add
                                                             Email</button>
                                                     </div>
                                                 </div>
