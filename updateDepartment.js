@@ -11,8 +11,6 @@ $(document).ready(() => {
     $("#input-text1").val(object[0].departmentCode);
     $("#input-text2").val(object[0].departmentName);
     $("#input-text3").val(object[0].name);
-    //----------------------------------------------------
-    
     $("#ea").val(object[0].e_A);
     $("#hod").val(object[0].hod);
 
@@ -54,8 +52,6 @@ $(document).ready(() => {
     $("#hod").change(function () {
         hod_email_visibility();
     })
-
-    //--------------------------------------------------
 
     var allEmails = object[0].emails
 
