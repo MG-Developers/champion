@@ -201,7 +201,6 @@
                                                 <div class="form-group">
                                                     <label for="accessories">EA</label> <br>
                                                     <select id="ea" class="form-control">
-                                                        <!-- <option value=""></option> -->
                                                         <option value="Y">Yes</option>
                                                         <option value="N" selected>No</option>
 
@@ -214,15 +213,14 @@
                                                 <div class="form-group" id="ea_email_container">
                                                     <div id="eaEmailDropdown">
                                                         <label for="eaemail">EA Emails*</label> <br>
-                                                        <select id="eaemail" name="eaemail" class="form-control"
+                                                        <select id="eaemail" name="eaemail" class="form-control filter-multi-select"
                                                             multiple>
                                                         </select>
                                                     </div>
                                                     <br>
                                                     <div>
                                                         <button class="btn btn-primary" type="button" id="addemail"
-                                                            data-toggle="modal" data-target="#myModal5">Add EA
-                                                            Email</button>
+                                                            data-toggle="modal" data-target="#myModal5">Add EA Email</button>
                                                     </div>
                                                 </div>
 
@@ -249,7 +247,7 @@
                                                 <div class="form-group">
                                                     <div id="hodEmailDropdown">
                                                         <label for="hodemail">HOD Emails*</label> <br>
-                                                        <select id="hodemail" name="hodemail" class="form-control"
+                                                        <select id="hodemail" name="hodemail" class="form-control filter-multi-select"
                                                             multiple>
                                                         </select>
                                                     </div>
@@ -280,8 +278,6 @@
             <jsp:include page="../../../Basic/template/footer.jsp" />
         </div>
         <!--% including footer %-->
-
-
     </div>
 
     <!-- Mainly scripts -->
