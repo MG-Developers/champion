@@ -27,7 +27,7 @@ $(document).ready(() => {
 
   $('#selectRecords').on('click', function () {
 
-    let EA_Dropdown = `<select id="eaemail" name="eaemail" class="form-control" multiple
+    let EA_Dropdown = `<label for="eaemail">EA Emails*</label> <br><select id="eaemail" name="eaemail" class="form-control" multiple
     placeholder="EA Email">`
 
     for (let i = 0; i < eaEmailArr.length; i++) {
@@ -68,7 +68,7 @@ $(document).ready(() => {
 
   $('#selectRecords2').on('click', function () {
 
-    let HOD_Dropdown = `<select id="hodemail" name="hodemail" class="form-control" multiple
+    let HOD_Dropdown = `<label for="hodemail">HOD Emails*</label> <br><select id="hodemail" name="hodemail" class="form-control" multiple
     placeholder="HOD Email">`
 
     for (let i = 0; i < hodEmailArr.length; i++) {
