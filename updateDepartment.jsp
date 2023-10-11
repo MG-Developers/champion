@@ -47,219 +47,215 @@
   </script>
 
 
-  <div id="wrapper">
-    <!--% including header %-->
-    <jsp:include page="../../../Basic/template/header.jsp" />
-    <!--% including breadcrumb %-->
-    <jsp:include page="../../../Basic/template/breadcrumb.jsp" />
-    <div class="modal inmodal fade" id="myModal5" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-md">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                class="sr-only">Close</span></button> <br><br>
-            <table cellspacing="0" cellpadding="4">
-              <tbody>
-                <tr id="filter_col2" data-column="1" class=" ">
-                  <td class=" col-12 ">
-                    <div class="d-flex ">
-                      <div class="input-group ">
-                        <input type="text" class="form-control column_filter" placeholder="Email"
-                          aria-label="Admin Theme" aria-describedby="button-addon2" id="eaemail2">
-                        <div class="input-group-append" id="searchrecord">
-                          <button class="btn btn-primary" type="button" id="button-addon1">
-                            Add Email</button>
-                        </div>
+<div id="wrapper">
+  <!--% including header %-->
+  <jsp:include page="../../../Basic/template/header.jsp" />
+  <!--% including breadcrumb %-->
+  <jsp:include page="../../../Basic/template/breadcrumb.jsp" />
+  <div class="modal inmodal fade" id="myModal5" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+              class="sr-only">Close</span></button> <br><br>
+          <table cellspacing="0" cellpadding="4">
+            <tbody>
+              <tr id="filter_col2" data-column="1" class=" ">
+                <td class=" col-12 ">
+                  <div class="d-flex ">
+                    <div class="input-group ">
+                      <input type="text" class="form-control column_filter" placeholder="Email"
+                        aria-label="Admin Theme" aria-describedby="button-addon2" id="eaemail2">
+                      <div class="input-group-append" id="searchrecord">
+                        <button class="btn btn-primary" type="button" id="button-addon1">
+                          Add Email</button>
                       </div>
-                    </div>
-                  </td>
-
-                  <td align="center"><input type="checkbox" class="column_filter invisible" id="col2_smart"
-                      checked="checked">
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="modal-body">
-            <table id="Datable" class="display responsive nowrap text-left " style="width: 100%">
-              <thead>
-                <th class="text-left" data-hide="phone">EA Email</th>
-                <th class="text-left" data-hide="phone">
-                  Type</th>
-              </thead>
-              <tbody id="ea_tbody">
-              </tbody>
-            </table>
-          </div>
-
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-            <button id="selectRecords" type="button" data-dismiss="modal" class="btn btn-primary">Select</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal inmodal fade" id="myModal6" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-md">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                class="sr-only">Close</span></button> <br><br>
-            <table cellspacing="0" cellpadding="4">
-              <tbody>
-                <tr id="filter_col2" data-column="1" class=" ">
-                  <td class=" col-12 ">
-                    <div class="d-flex ">
-                      <div class="input-group ">
-                        <input type="text" class="form-control column_filter" placeholder="Email"
-                          aria-label="Admin Theme" aria-describedby="button-addon2" id="hodemail2">
-                        <div class="input-group-append" id="searchrecord">
-                          <button class="btn btn-primary" type="button" id="button-addon2">
-                            Add Email</button>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-
-                  <td align="center"><input type="checkbox" class="column_filter invisible" id="col2_smart"
-                      checked="checked">
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="modal-body">
-            <table id="Datable2" class="display responsive nowrap text-left " style="width: 100%">
-              <thead>
-                <th class="text-left" data-hide="phone">HOD Email</th>
-                <th class="text-left" data-hide="phone">
-                  Type</th>
-              </thead>
-              <tbody id="hod_tbody">
-              </tbody>
-            </table>
-          </div>
-
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-            <button id="selectRecords2" type="button" data-dismiss="modal" class="btn btn-primary">Select</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="wrapper wrapper-content">
-      <div class="row">
-        <div class="col-lg-12 ">
-          <div class="card  mx-auto p-4 white-bg">
-            <div class="card-body ">
-              <div class="container ">
-                <form class="contact-form" id="form">
-                  <div class="controls">
-                    <div class="row">
-
-                      <div class="col-1"></div>
-                      <div class="col-md-4">
-
-                        <div class="form-group"><label>Department Code*</label><input type="text"
-                            placeholder="Department Code" class="form-control" id="input-text1" required=""
-                            maxlength="12"></div>
-
-
-                        <div class="form-group">
-                          <label for="accessories">EA</label> <br>
-                          <select id="ea" class="form-control">
-                            <!-- <option value=""></option> -->
-                            <option value="Y">Yes</option>
-                            <option value="N" selected>No</option>
-
-                          </select>
-                        </div>
-
-                        <div class="form-group"><label> Name*</label> <input type="text" placeholder="Name"
-                            class="form-control" id="input-text2"></div>
-
-                        <div class="input-group mb-3 mt-4" id="ea_email_container">
-                          <div id="eaEmailDropdown">
-                            <label for="eaemail">EA Emails*</label> <br>
-                            <select id="eaemail" name="eaemail" class="form-control" multiple>
-                            </select>
-                          </div>
-
-                          <div class="input-group-append">
-                            <button class="btn btn-primary" type="button" id="addemail" data-toggle="modal"
-                              data-target="#myModal5">Add
-                              Email</button>
-                          </div>
-                        </div>
-
-
-                      </div>
-
-                      <div class="col-2"></div>
-                      <div class="col-md-4">
-
-                        <div class="form-group"><label>Department Name*</label> <input type="text"
-                            placeholder="Department Name" class="form-control" id="input-text3" required=""
-                            maxlength="30 "></div>
-
-
-
-
-                        <div class="form-group">
-                          <label for="accessories">HOD</label> <br>
-                          <select id="hod" class="form-control">
-                            <option value="Y">Yes</option>
-                            <option value="N">No</option>
-                          </select>
-                        </div>
-
-
-                        <div class="form-group"><label>HOD Name*</label> <input type="text" placeholder="HOD Name"
-                            class="form-control" id="input-text4"></div>
-
-                        <div class="input-group mb-3 mt-4 ">
-                          <div id="hodEmailDropdown">
-                            <label for="hodemail">HOD Emails*</label> <br>
-                            <select id="hodemail" name="hodemail" class="form-control" multiple>
-                            </select>
-                          </div>
-                          <div class="input-group-append">
-                            <button class="btn btn-primary" type="button" id="addemail2" data-toggle="modal"
-                              data-target="#myModal6">Add
-                              Email</button>
-                          </div>
-                        </div>
-
-
-                      </div>
-
-                      <div class="px-2 offset-1 my-3 d-flex justify-content-start ">
-                        <button type="button" class="btn cancel btn-outline-danger pt-2 m-1">Cancel</button>
-                        <button type="submit" class="btn add btn-primary pt-2 m-1">Save Changes</button>
-                      </div>
-
                     </div>
                   </div>
-                </form>
+                </td>
 
-              </div>
+                <td align="center"><input type="checkbox" class="column_filter invisible" id="col2_smart"
+                    checked="checked">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="modal-body">
+          <table id="Datable" class="display responsive nowrap text-left " style="width: 100%">
+            <thead>
+              <th class="text-left" data-hide="phone">EA Email</th>
+              <th class="text-left" data-hide="phone">
+                Type</th>
+            </thead>
+            <tbody id="ea_tbody">
+            </tbody>
+          </table>
+        </div>
+
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+          <button id="selectRecords" type="button" data-dismiss="modal" class="btn btn-primary">Select</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal inmodal fade" id="myModal6" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+              class="sr-only">Close</span></button> <br><br>
+          <table cellspacing="0" cellpadding="4">
+            <tbody>
+              <tr id="filter_col2" data-column="1" class=" ">
+                <td class=" col-12 ">
+                  <div class="d-flex ">
+                    <div class="input-group ">
+                      <input type="text" class="form-control column_filter" placeholder="Email"
+                        aria-label="Admin Theme" aria-describedby="button-addon2" id="hodemail2">
+                      <div class="input-group-append" id="searchrecord">
+                        <button class="btn btn-primary" type="button" id="button-addon2">
+                          Add Email</button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+
+                <td align="center"><input type="checkbox" class="column_filter invisible" id="col2_smart"
+                    checked="checked">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="modal-body">
+          <table id="Datable2" class="display responsive nowrap text-left " style="width: 100%">
+            <thead>
+              <th class="text-left" data-hide="phone">HOD Email</th>
+              <th class="text-left" data-hide="phone">
+                Type</th>
+            </thead>
+            <tbody id="hod_tbody">
+            </tbody>
+          </table>
+        </div>
+
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+          <button id="selectRecords2" type="button" data-dismiss="modal" class="btn btn-primary">Select</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper wrapper-content">
+    <div class="row">
+      <div class="col-lg-12 ">
+        <div class="card  mx-auto p-4 white-bg">
+          <div class="card-body ">
+            <div class="container ">
+              <form class="contact-form" id="form">
+                <div class="controls">
+                  <div class="row">
+
+                    <div class="col-1"></div>
+                    <div class="col-md-4">
+
+                      <div class="form-group"><label>Department Code*</label><input type="text"
+                          placeholder="Department Code" class="form-control" id="input-text1" required=""
+                          maxlength="12"></div>
+
+
+                      <div class="form-group">
+                        <label for="accessories">EA</label> <br>
+                        <select id="ea" class="form-control">
+                          <option value="Y">Yes</option>
+                          <option value="N" selected>No</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group"><label> Name*</label> <input type="text" placeholder="Name"
+                          class="form-control" id="input-text2"></div>
+
+                      <div class="form-group" id="ea_email_container">
+                        <div id="eaEmailDropdown">
+                          <label for="eaemail">EA Emails*</label> <br>
+                          <select id="eaemail" name="eaemail" class="form-control" multiple>
+                          </select>
+                        </div>
+                        <br>
+                        <div>
+                          <button class="btn btn-primary" type="button" id="addemail" data-toggle="modal"
+                            data-target="#myModal5">Add EA
+                            Email</button>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="col-2"></div>
+
+                    <div class="col-md-4">
+                      <div class="form-group"><label>Department Name*</label>
+                        <input type="text" placeholder="Department Name" class="form-control" id="input-text3"
+                          required="" maxlength="30 ">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="accessories">HOD</label> <br>
+                        <select id="hod" class="form-control">
+                          <option value="Y">Yes</option>
+                          <option value="N">No</option>
+                        </select>
+                      </div>
+
+
+                      <div class="form-group"><label>HOD Name*</label> <input type="text" placeholder="HOD Name"
+                          class="form-control" id="input-text4"></div>
+
+                      <div class="form-group">
+                        <div id="hodEmailDropdown">
+                          <label for="hodemail">HOD Emails*</label> <br>
+                          <select id="hodemail" name="hodemail" class="form-control" multiple>
+                          </select>
+                        </div>
+                        <br>
+                        <div>
+                          <button class="btn btn-primary" type="button" id="addemail2" data-toggle="modal"
+                            data-target="#myModal6">Add HOD
+                            Email</button>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="px-2 offset-1 my-3 d-flex justify-content-start ">
+                      <button type="button" class="btn cancel btn-outline-danger pt-2 m-1">Cancel</button>
+                      <button type="submit" class="btn add btn-primary pt-2 m-1">Save Changes</button>
+                    </div>
+
+                  </div>
+                </div>
+              </form>
+
             </div>
           </div>
         </div>
       </div>
-      <jsp:include page="../../../Basic/template/footer.jsp" />
     </div>
-    <!--% including footer %-->
-
-
+    <jsp:include page="../../../Basic/template/footer.jsp" />
   </div>
+  <!--% including footer %-->
+
+
+</div>
+
 
 
 
