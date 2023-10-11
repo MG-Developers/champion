@@ -78,7 +78,7 @@ $(document).ready(() => {
 
     var fill_ea_Dropdown = () => {
 
-        let EA_Dropdown = `<select id="eaemail" name="eaemail" class="form-control" multiple
+        let EA_Dropdown = `<label for="eaemail">EA Emails*</label> <br> <select id="eaemail" name="eaemail" class="form-control" multiple
         placeholder="EA Email">`
 
         for (let i = 0; i < eaEmailArr.length; i++) {
@@ -108,7 +108,7 @@ $(document).ready(() => {
 
     var fill_hod_Dropdown = () => {
 
-        let HOD_Dropdown = `<select id="hodemail" name="hodemail" class="form-control" multiple
+        let HOD_Dropdown = `<label for="hodemail">HOD Emails*</label> <br><select id="hodemail" name="hodemail" class="form-control" multiple
     placeholder="HOD Email">`
 
         for (let i = 0; i < hodEmailArr.length; i++) {
@@ -158,21 +158,7 @@ $(document).ready(() => {
 
 
     $('#selectRecords').on('click', function () {
-
-        let EA_Dropdown = `<select id="eaemail" name="eaemail" class="form-control" multiple
-      placeholder="EA Email">`
-
-        for (let i = 0; i < eaEmailArr.length; i++) {
-            EA_Dropdown += `<option value=${eaEmailArr[i]['email']}>${eaEmailArr[i]['email']}</option>`
-        }
-
-        EA_Dropdown += `</select>`
-
-        document.getElementById('eaEmailDropdown').innerHTML = EA_Dropdown
-
-        var eaEmailDropdown = $("#eaemail").filterMultiSelect()
-
-        eaEmailDropdown.selectAll()
+        fill_ea_Dropdown();
     });
 
     $('#addemail2').on('click', function () {
@@ -196,21 +182,7 @@ $(document).ready(() => {
     });
 
     $('#selectRecords2').on('click', function () {
-
-        let HOD_Dropdown = `<select id="hodemail" name="hodemail" class="form-control" multiple
-        placeholder="HOD Email">`
-
-        for (let i = 0; i < hodEmailArr.length; i++) {
-            HOD_Dropdown += `<option value=${hodEmailArr[i]['email']}>${hodEmailArr[i]['email']}</option>`
-        }
-
-        HOD_Dropdown += `</select>`
-
-        document.getElementById('hodEmailDropdown').innerHTML = HOD_Dropdown
-
-        var hodEmailDropdown = $("#hodemail").filterMultiSelect()
-
-        hodEmailDropdown.selectAll()
+        fill_hod_Dropdown()
     });
 
 
@@ -264,45 +236,6 @@ $(document).ready(() => {
     //         // emailArr.push({ 'email': emailVal });
     //     }
 
-    // });
-
-    // $('#eaemail').hide();
-    // $('#addemail').hide();
-
-    // // Bind an event handler to the change event of the dropdown
-    // $('#ea').change(function(){
-
-    //     // Check the selected value
-    //     var selectedValue = $("#ea").val(); 
-    //     // If "No" is selected, hide the input field  with button; otherwise, show it
-    //     if(selectedValue === 'N'){
-
-    //         $('#eaemail').hide();
-    //         $("#addemail").hide();
-    //     } else {
-    //         $('#eaemail').show();
-    //         $("#addemail").show();
-
-    //     }
-    // });
-    //   $('#hodemail').hide();
-    //   $('#addemail1').hide();
-
-
-    // $('#hod').change(function () {
-
-    //     // Check the selected value
-    //     var selectedValue = $("#hod").val();
-    //     // If "No" is selected, hide the input field  with button; otherwise, show it
-    //     if (selectedValue === 'N') {
-
-    //         $('#hodemail').hide();
-    //         $("#addemail1").hide();
-    //     } else {
-    //         $('#hodemail').show();
-    //         $("#addemail1").show();
-
-    //     }
     // });
 
     $("#form").submit((e) => {
