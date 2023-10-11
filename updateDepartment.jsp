@@ -219,7 +219,7 @@
                       <div class="form-group"><label>HOD Name*</label> <input type="text" placeholder="HOD Name"
                           class="form-control" id="input-text4"></div>
 
-                      <div class="form-group">
+                      <div class="form-group" id="hod_email_container">
                         <div id="hodEmailDropdown">
                           <label for="hodemail">HOD Emails*</label> <br>
                           <select id="hodemail" name="hodemail" class="form-control" multiple>
