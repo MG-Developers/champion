@@ -211,17 +211,17 @@
                                                 <div class="form-group"><label> Name*</label> <input type="text"
                                                         placeholder="Name" class="form-control" id="name"></div>
 
-                                                <div class="input-group mb-3 mt-4" id="ea_email_container">
+                                                <div class="form-group" id="ea_email_container">
                                                     <div id="eaEmailDropdown">
                                                         <label for="eaemail">EA Emails*</label> <br>
                                                         <select id="eaemail" name="eaemail" class="form-control"
                                                             multiple>
                                                         </select>
                                                     </div>
-
-                                                    <div class="input-group-append">
+                                                    <br>
+                                                    <div>
                                                         <button class="btn btn-primary" type="button" id="addemail"
-                                                            data-toggle="modal" data-target="#myModal5">Add
+                                                            data-toggle="modal" data-target="#myModal5">Add EA
                                                             Email</button>
                                                     </div>
                                                 </div>
@@ -246,33 +246,20 @@
                                                         placeholder="HOD Name" class="form-control" id="hodname">
                                                 </div>
 
-                                                <div class="input-group mb-3 mt-4 ">
+                                                <div class="form-group">
                                                     <div id="hodEmailDropdown">
                                                         <label for="hodemail">HOD Emails*</label> <br>
                                                         <select id="hodemail" name="hodemail" class="form-control"
                                                             multiple>
                                                         </select>
                                                     </div>
-                                                    <div class="input-group-append">
+                                                    <br>
+                                                    <div>
                                                         <button class="btn btn-primary" type="button" id="addemail2"
-                                                            data-toggle="modal" data-target="#myModal6">Add
+                                                            data-toggle="modal" data-target="#myModal6">Add HOD
                                                             Email</button>
                                                     </div>
                                                 </div>
-
-                                                <!-- <div class="form-group" id="dropId"><label>Email*</label>
-                          <select id="DropDown" name="dropDown" class="form-control">
-                          </select>
-                        </div> -->
-
-                                                <!-- <div class="form-group"><label>EA*</label> <input type="text" placeholder="EA"
-                            class="form-control" id="ea" required="" maxlength="100"></div> -->
-
-                                                <!-- <div class="form-group"><label>EA*</label><br>
-                              <input type="radio" name="fav_language" value="Yes" /> Yes<br />
-                              <input type="radio" name="fav_language" value="No" /> No<br />
-                            </div> -->
-
                                             </div>
 
                                             <div class="px-2 offset-1 my-3 d-flex justify-content-start ">
