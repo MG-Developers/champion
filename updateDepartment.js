@@ -10,9 +10,52 @@ $(document).ready(() => {
 
     $("#input-text1").val(object[0].departmentCode);
     $("#input-text2").val(object[0].departmentName);
-    $("#input-text4").val(object[0].e_A);
-    $("#input-text5").val(object[0].hod);
     $("#input-text3").val(object[0].name);
+    //----------------------------------------------------
+    
+    $("#ea").val(object[0].e_A);
+    $("#hod").val(object[0].hod);
+
+    var ea_email_visibility = () => {
+
+        let ea = $("#ea").val();
+
+        if (ea === 'N') {
+            $('#ea_email_container').hide();
+        }
+
+        else {
+            $('#ea_email_container').show();
+        }
+
+    }
+
+    var hod_email_visibility = () => {
+
+        let hod = $("#hod").val();
+        
+        if (hod === 'N') {
+            $('#hod_email_container').hide();
+        }
+
+        else {
+            $('#hod_email_container').show();
+        }
+
+    }
+
+    ea_email_visibility();
+    hod_email_visibility();
+
+    $("#ea").change(function () {
+        ea_email_visibility();
+    })
+
+    $("#hod").change(function () {
+        hod_email_visibility();
+    })
+
+    //--------------------------------------------------
 
     var allEmails = object[0].emails
 
