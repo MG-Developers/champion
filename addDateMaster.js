@@ -1,13 +1,15 @@
 $(document).ready(() => {
   const token = JSON.parse(localStorage.getItem("token"));
   $("form")[0].reset();
-  // let test = $.test();
+  let test = $.test();
 
-  $("#saveDate").click(function () {
-
-    var dateString = $("#date").val();
-
+  $("#saveDate").click(function (e) {
+    
+    e.preventDefault();
+    
     $("#exampleModalCenter").modal('toggle');
+    
+    var dateString = $("#date").val();
 
     $.ajax({
       url: "http://192.168.50.81:8080/ap_automation_backend/dateFormat/add",
@@ -17,6 +19,7 @@ $(document).ready(() => {
       }),
 
       success: function (data, status, xhr) {
+        
         const swalWithBootstrapButtons = Swal.mixin({
           customClass: {
             confirmButton: 'btn btn-success',
@@ -46,6 +49,7 @@ $(document).ready(() => {
       },
 
       error: function (xhr) {
+        Swal.fire('Cancelled', 'Error.', 'info');
         console.log(xhr);
       },
     });
