@@ -18,6 +18,12 @@ $(document).ready(() => {
         dateFormat: dateString,
       }),
 
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+      },
+
       success: function (data, status, xhr) {
         
         const swalWithBootstrapButtons = Swal.mixin({
