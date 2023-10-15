@@ -82,9 +82,28 @@
         </div>
     </div>
 
-
-
-
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="close">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Date Picker -->
+                    <div class="form-group mb-4">
+                        <input type="text" placeholder=" Date Format" class="form-control" id="editDateInput">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="editDate">Edit Date</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div id="wrapper">
         <!--% including header %-->
@@ -153,118 +172,12 @@
                                     <!-- <th class="text-left" data-hide="phone">Date Editable</th> -->
                                     <th class="text-left" data-sort-ignore="true">ACTIONS</th>
                                 </thead>
-
-                                <tbody id="editableTable">
-                                    <!-- Data will be added dynamically -->
-                                </tbody>
-
-
-
                             </table>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal inmodal fade" id="myModal5" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"><span
-                                    aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-lg-12 ">
-                                        <div class="card  mx-auto p-4 white-bg">
-                                            <div class="card-body ">
-                                                <div class="container ">
-                                                    <form class="contact-form" id="form">
-                                                        <div class="controls">
-                                                            <div class="row">
-                                                                <div class="col-1"></div>
-                                                                <div class="col-md-4">
-
-                                                                    <div class="form-group"><label>Department
-                                                                            Code*</label> <input type="text"
-                                                                            placeholder="Department Code"
-                                                                            class="form-control" id="departmentcode"
-                                                                            required="" maxlength="12 " disabled></div>
-
-                                                                    <div class="form-group"><label>EA*</label>
-                                                                        <input type="text" placeholder="EA"
-                                                                            class="form-control" id="ea" required=""
-                                                                            maxlength="12 " disabled>
-                                                                    </div>
-
-
-
-
-
-
-                                                                    <div class="form-group"><label>
-                                                                            Name*</label>
-                                                                        <input type="text" placeholder="DepartmentName"
-                                                                            class="form-control" id="name" required=""
-                                                                            maxlength="12 " disabled>
-                                                                    </div>
-
-
-
-
-                                                                </div>
-                                                                <div class="col-2"></div>
-                                                                <div class="col-md-4">
-
-                                                                    <div class="form-group"><label>Department
-                                                                            Name*</label>
-                                                                        <input type="text" placeholder="DepartmentName"
-                                                                            class="form-control" id="departmentname"
-                                                                            required="" maxlength="12 " disabled>
-                                                                    </div>
-
-
-                                                                    <div class="form-group"><label>HOD*</label>
-                                                                        <input type="text" placeholder="HOD"
-                                                                            class="form-control" id="hod" required=""
-                                                                            maxlength="12 " disabled>
-                                                                    </div>
-
-
-
-
-
-
-
-                                                                    <div class="form-group"><label>Email*</label>
-                                                                        <select id="myDropdown" class="form-control">
-                                                                        </select>
-
-                                                                    </div>
-
-
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                </div>
-                                                </form>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-white " data-dismiss="modal">Close</button>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
 
 
         <!--% including footer %-->
