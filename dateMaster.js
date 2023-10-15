@@ -2,6 +2,7 @@ $(document).ready(() => {
 
     const token = JSON.parse(localStorage.getItem("token"));
     var test = $.test()
+    var my_object = []
 
     var tab = $("#Dtable").DataTable({
 
