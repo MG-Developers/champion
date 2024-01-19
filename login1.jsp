@@ -146,9 +146,25 @@
             background: hsla(195, 78%, 54%, 1);
         }
 
-        #captcha-container {
+        .captcha-container {
+            border: 2px solid gray;
+            padding: 10px;
+        }
+
+        .captcha-value-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #captcha-value {
             font-size: 24px;
             margin-bottom: 10px;
+            border: 2px solid rgb(168, 167, 167);
+            /* border-radius: 20px; */
+            padding: 6px;
+            letter-spacing: 8px;
+            background-color: rgb(168, 167, 167);
         }
 
         #captcha-input {
@@ -157,11 +173,19 @@
             margin-bottom: 10px;
         }
 
-        #check-captcha {
-            margin-top: 6px;
-            padding: 8px;
-            font-size: 16px;
-            cursor: pointer;
+        .refreshBtn {
+            border: none;
+            background-color: white;
+            font-size: x-large;
+            margin: 0px 8px;
+        }
+
+        .captcha-refresh-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -185,21 +209,32 @@
                     <!-- Input Box -->
                     <div class="form-input">
                         <span><i class="fa fa-user"></i></span>
-                        <input type="text" name="username" id="username" placeholder="User Name" tabindex="10">
+                        <input type="text" name="username" required id="username" placeholder="User Name" tabindex="10">
                     </div>
                     <div class="form-input">
                         <span><i class="fa fa-lock"></i></span>
-                        <input type="password" name="password" id="password" placeholder="Password">
+                        <input type="password" name="password" required id="password" placeholder="Password">
                     </div>
 
+                    <div class="captcha-container">
 
-                    <div id="captcha-container"></div>
-                    <input type="text" id="captcha-input" placeholder="Enter Captcha" class="form-control">
+                        <div class="captcha-value-container">
+                            <h5>Captcha</h5>
+                            <p id="timer">Time Left: 30 seconds</p>
+                        </div>
+                        <p id="captcha-value"></p>
 
+                        <div class="captcha-refresh-container">
+                            <input type="text" id="captcha-input" required placeholder="Enter Captcha"
+                                class="form-control">
+                            <button type="button" class="refreshBtn" id="refreshCaptcha"><i
+                                    class="fa fa-refresh"></i></button>
+                        </div>
+                    </div>
 
                     <!-- Login Button -->
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-block" id="check-captcha">Login</button>
+                        <button type="submit" class="btn btn-block">Login</button>
                     </div>
                     <div class="text-right ">
                         <a href="reset.html" class="forget-link">Forgot password?</a>
@@ -229,34 +264,5 @@
 
 </body>
 <script src="../../../js/login1.js"></script>
-<!-- Generate captcha -->
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Function to generate a random captcha
-        function generateCaptcha() {
-            var captcha = Math.random().toString(36).substring(2, 8).toUpperCase();
-            document.getElementById("captcha-container").textContent = captcha;
-            return captcha;
-        }
-
-        // Initial generation of captcha
-        var captchaCode = generateCaptcha();
-
-        // Event handler for checking the entered captcha
-        document.getElementById("check-captcha").addEventListener("click", function () {
-            var enteredCaptcha = document.getElementById("captcha-input").value.toUpperCase();
-
-            if (enteredCaptcha === captchaCode) {
-                alert("Captcha matched!");
-                // Add your success logic here
-            } else {
-                alert("Captcha does not match. Please try again.");
-                // Regenerate captcha and clear input
-                captchaCode = generateCaptcha();
-                document.getElementById("captcha-input").value = "";
-            }
-        });
-    });
-</script>
 
 </html>
