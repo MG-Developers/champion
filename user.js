@@ -5,7 +5,7 @@ $(document).ready(function()
   var totalPages = 10;
   var defaultPageSize = 10;
 
-  var table = $("#myDataTable").DataTable({
+  var dataTable = $("#myDataTable").DataTable({
     processing: true,
     serverSide: true,
 
