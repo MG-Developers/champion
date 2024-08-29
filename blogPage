@@ -1,0 +1,47 @@
+"use client"
+
+import { motion } from "framer-motion"
+import BlogSection from "../Sections/Blog/BlogSection"
+import Container from "../UI Components/Container/page"
+
+export default function BlogPage() {
+    return <>
+        <section className="flex items-center bg-black text-white min-h-[--hero-height]">
+            <Container>
+                <div className="grid grid-cols-2 gap-10">
+                    <div>
+                        <div className="text-white">
+                            <p className="text-6xl font-medium leading-tight">
+                                Our Newest
+                                <span className="text-custom-purple"> Insights</span>
+                            </p>
+                            <p className="mt-8 text-lg font-light">
+                                Discover fresh ideas and recent industry insights carefully chosen by our team of professionals.
+                            </p>
+                        </div>
+
+                        <div className="mt-8">
+                            <motion.button
+                                whileHover={{
+                                    scale: 1.05,
+                                    transition: { duration: 0.25 },
+                                }}
+                                whileTap={{
+                                    scale: 0.95,
+                                    transition: { duration: 0.125 },
+                                }}
+                                className="py-4 px-8 text-lg font-normal capitalize bg-custom-purple text-white border border-custom-purple shadow shadow-custom-purple rounded-xl"
+                                href="#"
+                            >
+                                Get Started
+                            </motion.button>
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+            </Container>
+        </section>
+
+        <BlogSection />
+    </>
+}
