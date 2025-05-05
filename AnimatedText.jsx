@@ -28,3 +28,17 @@ export const AnimatedText = ({ ...props }) => {
         </div>
     )
 }
+
+ // <section>
+ //          <div className="h-screen flex items-center">
+ //            <div className="w-11/12 mx-auto">
+ //              <div className="grid grid-cols-2">
+ //                <div>
+ //                  <AnimatedText text="A marketing website is a complex thing to build on your own" />
+ //                </div>
+
+ //                <div></div>
+ //              </div>
+ //            </div>
+ //          </div>
+ //        </section>
